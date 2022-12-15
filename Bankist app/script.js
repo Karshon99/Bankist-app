@@ -79,4 +79,16 @@ const displayMovements = function (movements) {
     containerMovements.insertAdjacentHTML("afterbegin", html);
   });
 };
+
 displayMovements(account1.movements);
+
+const createUsername = function (acc) {
+  acc.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(" ")
+      .map((names) => names[0])
+      .join("");
+  });
+};
+createUsername(accounts);
